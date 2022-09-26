@@ -1,0 +1,10 @@
+{
+  "title": "Eviatejs",
+  "url": "https://github.com/eviatejs/eviate",
+  "logo": {
+    "light": "/logo-light.svg",
+    "dark": "/logo-dark.svg"
+  },
+  "github": "eviatejs/eviate",
+  "twitter": "apoorvcodes"
+}
