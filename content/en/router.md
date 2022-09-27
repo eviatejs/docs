@@ -17,7 +17,7 @@ export default router;
 
 <br>
 
-# Methods
+## Methods
 
 ```ts
 app.register(method, path, handler)
@@ -30,7 +30,7 @@ app.patch(path, handler)
 app.getAllRoutes()
 ```
 
-# Routing
+## Routing
 
 ### Simple Handler
 

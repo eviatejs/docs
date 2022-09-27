@@ -18,7 +18,7 @@ app.listen(); //automatically loads config from eviate.config.ts
 
 <br>
 
-# Engine Methods
+## Engine Methods
 
 These are the public `Engine` method: 
 
@@ -40,7 +40,7 @@ app.shutdown()
 
 <br>
 
-# Routing
+## Routing
 
 Routing in eviate is similar to what other frameworks offer, tho we have different way of handling response check out `response`, for more info checkout `routing`
 
@@ -57,7 +57,7 @@ app.get("/hello-world", (ctx:Context):EviateResponse => {
 
 <br>
 
-# Middlewares
+## Middlewares
 
 Middlewares in eviate are functions which return `EviateMiddlewareResponse` which has `ctx` object which would be passed to next middleware for more check out `Middleware`
 
@@ -67,7 +67,7 @@ cors(ctx) => basicAuth(ctx) => logger(ctx)
 
 <br>
 
-# Listen
+## Listen
 
 In Eviate engine automatically imports viable configs like port, hostname from `eviate.config.ts`, but you can pass parameters directly to listen function
 
