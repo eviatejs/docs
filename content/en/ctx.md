@@ -15,6 +15,7 @@ ctx.method
 ctx.isSecure()
 ctx.path
 ctx.body
+ctx.file()
 ctx.req //raw request object
 ctx.url
 ctx.headers
@@ -32,4 +33,19 @@ app.get("/user/:name", (ctx:Context):EviateResponse => {
 })
 
 
-app.get("/")
+app.get("/user/:name/:id/:isAdult", (ctx:Context):EviateResponse => {
+    const {name, id, isAdult} = ctx.params
+    return {
+        json: {
+            "name": name,
+            "id": id,
+            "isAdult": isAdult
+        },
+        status: 200,
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }
+})
+
+

@@ -59,7 +59,7 @@ app.get("/hello-world", (ctx:Context):EviateResponse => {
 
 # Middlewares
 
-Middlewares in engine are functions which return `EviateMiddlewareResponse` which has `ctx` object which would be passed to next middleware for more check out `Middleware`
+Middlewares in eviate are functions which return `EviateMiddlewareResponse` which has `ctx` object which would be passed to next middleware for more check out `Middleware`
 
 ```ts
 cors(ctx) => basicAuth(ctx) => logger(ctx)
