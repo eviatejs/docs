@@ -42,53 +42,41 @@ app.shutdown()
 
 # Routing
 
-Routing in eviate is similar to what other frameworks offer, tho we have different way of handling response check out `response`
+Routing in eviate is similar to what other frameworks offer, tho we have different way of handling response check out `response`, for more info checkout `routing`
 
-
-
-### Simple Handler
 
 ```ts
-app.get("/", (ctx: Context):EviateResponse => {
+app.get("/hello-world", (ctx:Context):EviateResponse => {
     return {
         text: "Hello World",
-        status: 200
+        status: 200,
+        headers: {}
     }
 })
 ```
 
-### Wild Card
+<br>
+
+# Middlewares
+
+Middlewares in engine are functions which return `EviateMiddlewareResponse` which has `ctx` object which would be passed to next middleware for more check out `Middleware`
 
 ```ts
-app.get("/abc/*/wildcard", (ctx: Context):EviateResponse => {
-    return {
-        text: "Wild Card method",
-        status: 200
-    }
-})
+cors(ctx) => basicAuth(ctx) => logger(ctx)
 ```
 
-### Route Params 
+<br>
 
-```ts 
-app.get("/route/:param", (ctx: Context):EviateResponse => {
-    return {
-        text: `${ctx.param.param} - Param`,
-        status: 200
-    }
-})
-```
-Multiple params at once 
+# Listen
+
+In Eviate engine automatically imports viable configs like port, hostname from `eviate.config.ts`, but you can pass parameters directly to listen function
 
 ```ts
-app.get("/user/:name/book/:data", (ctx: Context):EviateResponse => {
-    const { name, data } = ctx.param
-    return {
-        text: `Book name is ${name} relased on ${date}`,
-        status: 200
-    }
+
+app.listen({
+    port: 3000,
+    hostname: "localhost"
 })
+
+app.listen() //imports from config file onload
 ```
-
-
-
